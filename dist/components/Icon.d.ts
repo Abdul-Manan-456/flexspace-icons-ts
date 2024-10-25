@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export interface IconProps {
     name: string;
     size?: string | number;

@@ -53,9 +53,8 @@ var SvgDeleteIcon = function SvgDeleteIcon(props) {
     xmlns: "http://www.w3.org/2000/svg",
     width: 13,
     height: 18,
-    fill: "none"
+    fill: "gray"
   }, props), _path || (_path = /*#__PURE__*/React.createElement("path", {
-    fill: "#B8BFCC",
     d: "M.414 4.45v11.877c0 .611.5 1.11 1.115 1.11h10.353c.615 0 1.114-.499 1.114-1.114V4.451zm11 11.933H1.994a.523.523 0 0 1-.524-.524V5.505h10.47V15.86a.525.525 0 0 1-.524.524m1.055-13.62h-2.292v-.801a1.4 1.4 0 0 0-1.4-1.4H4.63c-.773 0-1.402.63-1.402 1.403v.798H.94a.53.53 0 0 0-.527.528c0 .288.236.527.527.527H12.47a.53.53 0 0 0 .527-.527.53.53 0 0 0-.527-.528m-8.18-.826c0-.274.22-.496.495-.496H8.63c.274 0 .496.222.496.496v.826H4.288z"
   })));
 };
@@ -90,15 +89,15 @@ var Icons = /*#__PURE__*/Object.freeze({
 });
 
 var Icon = function (_a) {
-    var name = _a.name, _b = _a.size, size = _b === void 0 ? 24 : _b, _c = _a.color, color = _c === void 0 ? 'currentColor' : _c, _d = _a.className, className = _d === void 0 ? '' : _d, _e = _a.style, style = _e === void 0 ? {} : _e, props = __rest(_a, ["name", "size", "color", "className", "style"]);
-    var iconName = "".concat(name.charAt(0).toUpperCase()).concat(name.slice(1), "Icon");
+    var name = _a.name; _a.size; var _c = _a.color, color = _c === void 0 ? "currentColor" : _c, _d = _a.className, className = _d === void 0 ? "" : _d, _e = _a.style, style = _e === void 0 ? {} : _e, props = __rest(_a, ["name", "size", "color", "className", "style"]);
+    var iconName = "".concat(name.charAt(0).toUpperCase()).concat(name.slice(1));
     var IconComponent = Icons[iconName];
+    console.log("icon------------------", IconComponent);
     if (!IconComponent) {
         console.warn("Icon \"".concat(name, "\" not found"));
         return null;
     }
-    return (React__default.createElement("span", __assign({ className: "my-svg-icon icon-".concat(name, " ").concat(className), style: __assign({ display: 'inline-flex', width: typeof size === 'number' ? "".concat(size, "px") : size, height: typeof size === 'number' ? "".concat(size, "px") : size, color: color }, style) }, props),
-        React__default.createElement(IconComponent, { width: "100%", height: "100%" })));
+    return (React__default.createElement(IconComponent, __assign({ fill: color, className: "icon-svg ".concat(className), style: __assign({ color: color }, style) }, props)));
 };
 
 export { SvgDeleteIcon as DeleteIcon, SvgEditIcon as EditIcon, Icon };
